@@ -37,9 +37,10 @@ function Home() {
         return {
             cloudiness: weatherClouds.all,
             currentTemp: Math.round(weatherMain.temp),
-            highTemp: weatherMain.temp_max,
+            highTemp: Math.round(weatherMain.temp_max),
             humidity: weatherMain.humidity,
-            lowTemp: weatherMain.temp_min,
+            lowTemp: Math.round(weatherMain.temp_min),
+            weatherType: weatherData.weather && weatherData.weather[0].main,
             //ADD WEATHER TYPE
             windSpeed: weatherData.wind && weatherData.wind.speed,
 
@@ -48,7 +49,8 @@ function Home() {
     }, [weatherData]);
     
     return (
-        <div>
+    <div style = {{backgroundColor: `rgba(0,130,70,${cloudiness/100})`}}>
+        <div className = "Weather--wrapper">
             <Header/>
             <h1>Weather App</h1>
             <WeatherCard city={city} 
@@ -60,6 +62,7 @@ function Home() {
             weatherType={weatherType}
             windSpeed={windSpeed}/>
         </div>
+    </div>
     )
 }
 

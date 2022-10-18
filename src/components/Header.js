@@ -6,7 +6,7 @@ import React from "react";
             <a href= "/?city=Orlando">Orlando</a>
             <a href= "/?city=Oakland">Oakland</a>
             <a href= "/?city=Paris">Paris</a>
-            <a href= "/?city=Delhi">Delhi</a>
+            <a href= "/?city=Dubai">Dubai</a>
         </header>
     )
  }
